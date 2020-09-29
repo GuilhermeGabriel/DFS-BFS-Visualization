@@ -42,6 +42,14 @@ body,
   outline: none;
 }
 
+h4{
+  margin: 0;
+}
+
+span{
+  font-size: 14px;
+}
+
 canvas {
   flex: 1;
   background-color: #ccc;

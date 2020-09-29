@@ -187,8 +187,9 @@ const btnFind = document.getElementById('btn-find');
 
 btnFind.addEventListener('click', () => {
   let result = [];
-  let tipoDeBusca = tipoBuscaSelect.value;
+  let tipoDeBusca = tipoBuscaSelect.selectedIndex;
   let pontoInical = pontoDeInicioSelect.value;
+  console.log(tipoDeBusca);
 
   for (let point of points) {
     drawPoint(point.x, point.y, 'white', point.letter);
@@ -201,6 +202,7 @@ btnFind.addEventListener('click', () => {
 
   if(tipoDeBusca == 0){
     g.dfs(pontoInical, result);
+    console.log(result);
     for (let l of result) {
       let indexInPoints = findWithAttr(points, 'letter', l)
       showBuscaComDelay(delayMillis, points[indexInPoints]);
@@ -208,6 +210,7 @@ btnFind.addEventListener('click', () => {
     }
   }else{
     g.bfs(pontoInical, result);
+    console.log(result);
     for (let l of result) {
       let indexInPoints = findWithAttr(points, 'letter', l)
       showBuscaComDelay(delayMillis, points[indexInPoints]);
